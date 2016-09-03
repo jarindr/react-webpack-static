@@ -1,0 +1,6 @@
+extends:
+  - plugin:import/errors
+settings:
+  import/ignore:
+    - node_modules
+    - \.(scss|less|css|styl)$
