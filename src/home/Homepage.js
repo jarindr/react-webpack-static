@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomePage = (props) => {
   return (
-    <div></div>
+    <div>kuy</div>
   )
 }
 export default HomePage

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --progress --color --history-api-fallback"
+    "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --progress --color --history-api-fallback",
+    "build": "rm -rf public && webpack -p --config webpack.build.config.js --progress --color",
   },
   "repository": {
     "type": "git",
@@ -46,7 +47,6 @@
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^1.3.0",
     "static-site-generator-webpack-plugin": "^2.1.0",
-    "stats-webpack-plugin": "^0.4.2",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",

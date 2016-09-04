@@ -1,10 +1,8 @@
-'use strict'
 const autoprefixer = require('autoprefixer')
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const webpack = require('webpack')
 const StaticData = require('./StaticData')
-const LandingPageData = require('./LandingPageData')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const commonLoaders = require('./webpack/commonLoaders')
 const createStylesheetLoaders = require('./webpack/createStylesheetLoaders')

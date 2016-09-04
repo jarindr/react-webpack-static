@@ -14,28 +14,6 @@ export default (locals, callback) => {
   const ReactDOMServer = require('react-dom/server')
   match({ routes, location }, (error, redirectLocation, renderProps) => {
     if (error) return callback(error)
-
-    // This is a redirect route, generate a minimal redirecting page.
-    if (redirectLocation) {
-      const html = `<!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="UTF-8" />
-            <title>Redirect</title>
-            <meta name="viewport" content="width=device-width">
-            <meta http-equiv="refresh" content="0;url=${redirectLocation}">
-          </head>
-          <body>
-            <span style="font: caption">
-              If you are not redirected automatically, <a href='${redirectLocation}'>follow the link to ${redirectLocation}</a>.
-            </span>
-            <script language="javascript">window.location.replace(${JSON.stringify(redirectLocation)})</script>
-          </body>
-        </html>
-      `
-      return callback(null, html)
-    }
-
     // This is a non-redirecting route, so render it with ReactDOMServer.
     try {
       const element = <RouterContext {...renderProps} />
