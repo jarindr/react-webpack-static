@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --progress --color --history-api-fallback",
-    "build": "rm -rf public && webpack -p --config webpack.build.config.js --progress --color",
+    "build": "rm -rf public && webpack -p --config webpack.build.config.js --progress --color"
   },
   "repository": {
     "type": "git",
