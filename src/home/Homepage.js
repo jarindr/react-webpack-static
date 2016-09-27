@@ -1,8 +1,15 @@
 import React from 'react'
 
-const HomePage = (props) => {
+import ImageSwitcher from '../components/ImageSwitcher'
+
+const HomePage = () => {
   return (
-    <div>kuy</div>
+    <div>
+      <ImageSwitcher
+        imageCover={require('./assets/cover1.png')}
+        imageHover={require('./assets/cover2.png')}
+      />
+    </div>
   )
 }
 export default HomePage
