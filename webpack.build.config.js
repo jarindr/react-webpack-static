@@ -2,14 +2,14 @@ const autoprefixer = require('autoprefixer')
 const path = require('path')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const webpack = require('webpack')
-const StaticData = require('./StaticData')
+const Routes = require('./StaticRoutes.js')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const commonLoaders = require('./webpack/commonLoaders')
 const createStylesheetLoaders = require('./webpack/createStylesheetLoaders')
 
 module.exports = {
   entry: {
-    prerender: './src/prerender.js',
+    prerender: './src/prerender.js'
   },
 
   output: {
@@ -33,7 +33,7 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new StaticSiteGeneratorPlugin('prerender', StaticData.paths, StaticData),
+    new StaticSiteGeneratorPlugin('prerender', Routes.paths, Routes),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
